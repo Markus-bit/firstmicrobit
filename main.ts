@@ -15,30 +15,13 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     music.rest(music.beat(BeatFraction.Double))
     music.startMelody(music.builtInMelody(Melodies.Nyan), MelodyOptions.ForeverInBackground)
 })
-input.onButtonPressed(Button.A, function () {
+input.onButtonPressed(Button.AB, function () {
     music.stopMelody(MelodyStopOptions.All)
-    music.playTone(494, music.beat(BeatFraction.Double))
-    music.playTone(349, music.beat(BeatFraction.Double))
-    music.playTone(392, music.beat(BeatFraction.Double))
-    music.playTone(440, music.beat(BeatFraction.Double))
-    music.playTone(294, music.beat(BeatFraction.Double))
-    music.playTone(294, music.beat(BeatFraction.Double))
-    music.playTone(392, music.beat(BeatFraction.Double))
-    music.playTone(349, music.beat(BeatFraction.Double))
-    music.playTone(330, music.beat(BeatFraction.Double))
-    music.playTone(349, music.beat(BeatFraction.Double))
-    music.playTone(262, music.beat(BeatFraction.Double))
-    music.playTone(262, music.beat(BeatFraction.Double))
-    music.playTone(294, music.beat(BeatFraction.Double))
-    music.playTone(294, music.beat(BeatFraction.Double))
-    music.playTone(330, music.beat(BeatFraction.Double))
-    music.playTone(349, music.beat(BeatFraction.Double))
-    music.playTone(349, music.beat(BeatFraction.Double))
-    music.playTone(392, music.beat(BeatFraction.Double))
-    music.playTone(440, music.beat(BeatFraction.Double))
-    music.playTone(494, music.beat(BeatFraction.Double))
-    music.playTone(523, music.beat(BeatFraction.Double))
+    music.playTone(349, music.beat(BeatFraction.Half))
+    music.playTone(392, music.beat(BeatFraction.Half))
+    music.playTone(440, music.beat(BeatFraction.Half))
     music.playTone(587, music.beat(BeatFraction.Whole))
+    music.playTone(523, music.beat(BeatFraction.Half))
 })
 input.onButtonPressed(Button.B, function () {
     music.stopMelody(MelodyStopOptions.All)
@@ -62,7 +45,9 @@ input.onButtonPressed(Button.B, function () {
         music.playTone(392, music.beat(BeatFraction.Whole))
     }
 })
-music.startMelody(music.builtInMelody(Melodies.Nyan), MelodyOptions.ForeverInBackground)
+input.onPinPressed(TouchPin.P1, function () {
+    music.startMelody(music.builtInMelody(Melodies.Nyan), MelodyOptions.Once)
+})
 basic.forever(function () {
     basic.showLeds(`
         . . . . .
