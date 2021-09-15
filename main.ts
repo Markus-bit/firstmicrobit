@@ -12,8 +12,6 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
         music.playTone(523, music.beat(BeatFraction.Half))
         music.playTone(440, music.beat(BeatFraction.Half))
     }
-    music.rest(music.beat(BeatFraction.Double))
-    music.startMelody(music.builtInMelody(Melodies.Nyan), MelodyOptions.ForeverInBackground)
 })
 input.onButtonPressed(Button.AB, function () {
     music.stopMelody(MelodyStopOptions.All)
